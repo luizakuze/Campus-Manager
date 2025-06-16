@@ -28,6 +28,8 @@ docker-compose up -d
 # Acesse o terminal do banco
 docker exec -it meumysql mysql -u root -psenhaRoot
 
-# Execute o script de criação e povoamento do banco
+# Em outro terminal, execute o script de criação e povoamento do banco
 docker exec -i meumysql mysql -u root -psenhaRoot bcd < script.sql
+
+# Pronto! Retorne ao terminal do banco e sua base está pronta 🚀
 ```
