@@ -47,7 +47,7 @@ CREATE TABLE Aluno (
     FOREIGN KEY (codigoCurso) REFERENCES Curso(codigoCurso)
 );
 
-CREATE TABLE Professor_Leciona_Disciplina (
+CREATE TABLE Professor_Disciplina (
     login VARCHAR(50) NOT NULL,
     codigoDisciplina VARCHAR(20) NOT NULL,
     ano YEAR NOT NULL,
@@ -59,7 +59,8 @@ CREATE TABLE Professor_Leciona_Disciplina (
     FOREIGN KEY (codigoDisciplina) REFERENCES Disciplina(codigoDisciplina)
 );
 
-CREATE TABLE Curso_Possui_Disciplina (
+
+CREATE TABLE Curso_Disciplina (
     codigoCurso VARCHAR(10) NOT NULL,
     codigoDisciplina VARCHAR(20) NOT NULL,
     codigoPPC INT NOT NULL,
@@ -70,7 +71,7 @@ CREATE TABLE Curso_Possui_Disciplina (
     FOREIGN KEY (codigoDisciplina) REFERENCES Disciplina(codigoDisciplina)
 );
 
-CREATE TABLE Aluno_Cursa_Disciplina (
+CREATE TABLE Aluno_Disciplina (
     login VARCHAR(50) NOT NULL,
     codigoDisciplina VARCHAR(20) NOT NULL,
     ano YEAR NOT NULL,
@@ -159,7 +160,7 @@ VALUES (
 );
 
 -- Inserção das disciplinas do curso de Engenharia de Telecomunicações
-INSERT INTO Curso_Possui_Disciplina (codigoCurso, codigoDisciplina, codigoPPC, ementa, objetivos)
+INSERT INTO Curso_Disciplina (codigoCurso, codigoDisciplina, codigoPPC, ementa, objetivos)
 SELECT 'ENG', codigoDisciplina, 1290, CONCAT('Ementa da disciplina ', nome), CONCAT('Objetivos da disciplina ', nome)
 FROM Disciplina;
 
@@ -198,7 +199,7 @@ INSERT INTO Professor (login, idProf, formacao) VALUES
 
 
 -- Inserção do vínculo de lecionamento de disciplinas
-INSERT INTO Professor_Leciona_Disciplina (login, codigoDisciplina, ano, semestre, bibliografia, criterioAvaliacao) VALUES
+INSERT INTO Professor_Disciplina (login, codigoDisciplina, ano, semestre, bibliografia, criterioAvaliacao) VALUES
 ('maria.eduarda', 'ESC129001', 2022, 1, 'Textos de cidadania', 'Participação e redações'),
 ('ana.oliveira', 'CAL129001', 2022, 1, 'Guidorizzi Vol.1', 'Provas e listas'),
 ('beatriz.souza', 'PTG129001', 2022, 2, 'Gramática técnica', 'Trabalhos e presença'),
@@ -230,7 +231,7 @@ INSERT INTO Professor_Leciona_Disciplina (login, codigoDisciplina, ano, semestre
 ('lucas.gabriel', 'PSD129005', 2024, 2, 'DSP e filtros', 'Mini projeto');
 
 -- Inserção do disciplinas de um aluno
-INSERT INTO Aluno_Cursa_Disciplina (login, codigoDisciplina, ano, semestre, conceitoFinal) VALUES
+INSERT INTO Aluno_Disciplina (login, codigoDisciplina, ano, semestre, conceitoFinal) VALUES
 ('luiza.kuze', 'ESC129001', 2022, 1, 10),
 ('luiza.kuze', 'CAL129001', 2022, 1, 9),
 ('luiza.kuze', 'PTG129001', 2022, 2, 10),
