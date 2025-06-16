@@ -1,0 +1,21 @@
+# Created by https://www.toptal.com/developers/gitignore/api/dbeaver,database
+# Edit at https://www.toptal.com/developers/gitignore?templates=dbeaver,database
+
+### Database ###
+*.accdb
+*.db
+*.dbf
+*.mdb
+*.pdb
+*.sqlite3
+*.db-shm
+*.db-wal
+mysql-data
+
+### DBeaver ###
+# ide config file
+.dbeaver-data-sources*.xml
+
+# End of https://www.toptal.com/developers/gitignore/api/dbeaver,database
+
+
