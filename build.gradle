@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot'         version '3.5.3'
+    id 'io.spring.dependency-management'  version '1.1.7'
+}
+
+group   = 'br.edu.ifsc.db'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    /* ───────────── Runtime / aplicação ───────────── */
+    implementation 'org.springframework.boot:spring-boot-starter-web'      // REST + Tomcat
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // JPA / Hibernate
+    runtimeOnly   'org.mariadb.jdbc:mariadb-java-client'                    // driver JDBC
+
+    /* ───────────── Qualidade de vida ─────────────── */
+    compileOnly          'org.projectlombok:lombok'
+    annotationProcessor  'org.projectlombok:lombok'
+
+    /* ───────────── Testes ────────────────────────── */
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly    'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
