@@ -5,8 +5,7 @@
 - A aplicação utiliza Spring Boot, JPA e MariaDB para persistência de dados e organização do domínio acadêmico.
 
 
->-  Autora: Luiza Kuze <br>
-    > Data: 22/07/2025
+> Autora: Luiza Kuze <br> Data: 22/07/2025
 
 
 ##  Modelagem
@@ -82,8 +81,8 @@ sudo apt install mariadb-server
 ### 2. Clone o repositório
 
 ```bash
-git clone https://github.com/BCD029008/laborat-rio-spring-boot-jpa-luizakuze.git](https://github.com/luizakuze/Campus-Manager)
-cd laborat-rio-spring-boot-jpa-luizakuze
+git clone https://github.com/luizakuze/Campus-Manager
+cd Campus-Manager
 ```
 
 ### 3. Crie a base de dados `CampusManager`
